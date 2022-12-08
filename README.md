@@ -1,12 +1,14 @@
 ## 2420 Linux System Administration Final Exam
 
-#### Part 1
+### Part 1
 Use the following code to update software on Ubuntu OS
 
     sudo apt upgrade
     sudo apt update
 
-#### Part 2
+### Part 2
+
+Created the file 
 
 ```
 vim part2
@@ -20,10 +22,15 @@ enter + line number + shift g to move to the different lines
 
 ![file edit](./images/part1.png)
 
-#### Part 3
+### Part 3
 
 ```
 man journalctl
+```
+within the journalctl man page, use
+
+```
+/-b
 ```
 ![file edit](./images/part2.png)
 
@@ -35,13 +42,21 @@ man journalctl
 ```
 journalctl -b --output=json-pretty -p 4
 ```
-#### Part 4
+![line](./images/part7.png)
+![list](./images/part8.png)
+### Part 4
+
+```
+#!/bin/bash
+
+USR=`grep /etc/passwd -e x:[1-5][0-9][0-9]`
+LISTUSR=($USR)
+echo "Regular users on the system are:"
+  for user in [$LISTUSR]??? <- for loop here :>
 
 ```
 
-```
-
-#### Part 5
+### Part 5
 
 ![service](./images/part5.png)
 
@@ -60,7 +75,7 @@ ExecStart=/bin/bash -c 'echo "hi Bob" > /home/vagranthi-bob'
 WantedBy=multi-user.target
 ```
 
-#### Part 6
+### Part 6
 
 
 ![timer](./images/part6.png)
